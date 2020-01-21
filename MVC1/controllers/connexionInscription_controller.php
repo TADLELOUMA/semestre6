@@ -16,7 +16,7 @@ if(isset($_POST['username']) AND isset($_POST['email']) AND isset($_POST['passwo
   echo $_POST['password'];
   echo $_POST['confirmedpassword'];*/
 //  if($inscription->verificationUsers() == "verification ok")
-    if($inscription->insertionBdd()){
+    if($inscription->ajouter_membre_dans_bdd()){
       echo "bon";
     }else echo "mauvais";
 /*  else {

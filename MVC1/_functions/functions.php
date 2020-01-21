@@ -14,3 +14,9 @@ function debug($var){
     var_dump($var);
     echo '</pre>';
 }
+
+// Vérifie si l'utilisateur est connecté
+function utilisateur_est_connecte() {
+
+	return !empty($_SESSION['id']);
+}

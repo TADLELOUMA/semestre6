@@ -4,12 +4,11 @@
 
 /*function Bdd()
 {*/
-  $dsn = 'mysql:host=localhost';
-  $user = 'dbname=thdiallo';
-  $password = '';
+  $dsn = 'mysql:host=dbserver;dbname=thdiallo';
+  $user = 'thdiallo';
+  $password = 'Amadou1994';
     try {
         $pdo = new PDO($dsn,$user,$password);
-        echo "connexion reussi";
     } catch (Exception $e) {
         echo "Failed: " . $e->getMessage();
     }

@@ -21,7 +21,7 @@
             <a class="nav-link" href="#">A propos</a>
           </li>
             <li class="nav-item">
-            <a class="nav-link" href="../MVC1/views/connexionInscription_view.php">Se connecter</a>
+            <a class="nav-link" href="../MVC1/views/connexion_view.php">Se connecter</a>
           </li>
         </ul>
       </div>

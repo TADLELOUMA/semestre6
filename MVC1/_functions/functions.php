@@ -20,3 +20,10 @@ function utilisateur_est_connecte() {
 
 	return !empty($_SESSION['id']);
 }
+
+// Vérifie si l'utilisateur est connecté   
+function utilisateur_est_connecte() {
+ 
+	return !empty($_SESSION['id']);
+
+}

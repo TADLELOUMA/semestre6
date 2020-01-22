@@ -1,6 +1,7 @@
-<?
+<?php
 
-class Users
+
+class Inscription_model
 {
     //private $idUsers;
     private $username;
@@ -57,18 +58,5 @@ class Users
       }
 
     }
-
-    
-    //envoie de tous les utilisateurs
-    static function getAllUsers(){
-        global $pdo;
-
-
-        $reqUsers = $pdo->prepare('SELECT * FROM Users');
-        $reqUsers->execute([]);
-        return $reqUsers->fetchAll();
-    }
-
-    
 
 }

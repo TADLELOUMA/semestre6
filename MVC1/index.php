@@ -28,7 +28,7 @@ if(isset($_GET['page']) AND !empty($_Get['page'])) {
 }
 //Array contenant toutes les pages
 $allPages = scandir('controllers/');
-var_dump($allPages);
+//var_dump($allPages);
 //Vérification de l'éxistence de la page
 if(in_array($page.'_controller.php', $allPages)) {
     //Inclusion de la page

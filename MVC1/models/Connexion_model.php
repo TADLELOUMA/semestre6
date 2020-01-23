@@ -13,15 +13,13 @@ class Connexion_model
 
     }
 
-	public function combinaison_connexion_valide($username, $password) {
-
+	public function combinaison_connexion_valide($username, $mot_de_pass) {
 		global $pdo;
-		
 		$requete = $pdo->prepare("SELECT * FROM Users 
 			WHERE
 			username  = :username" );
 			$requete->execute(array(
-			'username' => $this->username));
+			'username' => $username));
 			$result = $requete->fetch();
 		
 		if ($result) {
@@ -30,7 +28,6 @@ class Connexion_model
 		}else
 			return false;
 	}
-
 	public function lire_infos_utilisateur($idUsers) {
 
   		global $pdo;

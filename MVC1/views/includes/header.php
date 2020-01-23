@@ -2,14 +2,14 @@
 
 <section id="nav-bar">
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="#"><img src="../MVC1/images/logo.PNG"></a>
+      <a class="navbar-brand" href="#"><img src="../MVC1/assets/images/logo.PNG"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="../MVC1/views/home_view.php">Acceuil </a>
+            <a class="nav-link" href="#">Acceuil </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../MVC1/views/donner_view.php" >Donnateur</a>

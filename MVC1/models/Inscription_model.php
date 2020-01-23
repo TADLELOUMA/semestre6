@@ -1,5 +1,6 @@
 <?php
 
+require_once('../_functions/functions.php');
 
 class Inscription_model
 {
@@ -20,43 +21,30 @@ class Inscription_model
         $this->passhass = password_hash($this->Pass_word, PASSWORD_DEFAULT);
 
     }
-    /*public function getidUsers()
+ 
+  public function ajouter_membre_dans_bdd()
+  {
+    global $pdo;
+
+    try
     {
-      global $pdo;
-      return $this->idUsers;
-    }*/
+      $requete = $pdo->prepare('INSERT INTO Users(username,adresse_mail,mot_de_pass) VALUES (:username,:adresse_email,:passhass)');
+      $result =$requete->execute(array(
+        'username' => $this->username,
+        'adresse_email' => $this->adresse_email,
+        'passhass' => $this->passhass
+      ));
+      if($result){
+        return $pdo->lastInsertId();
+      }
+      return $requete->errorInfo();
+      //echo "ajout reussi"."<br />";
 
-    public function existsMail($adresse_email)
-    {
-      global $pdo;
-
-      $req = $pdo->prepare("SELECT * FROM Users WHERE adresse_email= ?");
-      $req->execute(array($adresse_email));
-      return $req->rowCount()>0;
-
+      /*echo getId;*/
     }
-    
-    public function ajouter_membre_dans_bdd()
-    {
-      global $pdo;
-
-      try
-      {
-
-        $req = $pdo->prepare('INSERT INTO Users(username,adresse_email,mot_de_pass) VALUES (:username,:adresse_email,:passhass)');
-        $req->execute(array(
-          'username' => $this->username,
-          'adresse_email' => $this->adresse_email,
-          'passhass' => $this->passhass
-        ));
-        echo "ajout reussi"."<br />";
-
-        /*echo getId;*/
-      }
-      catch (PDOException $e){
-          echo "ajout invalide".$e->getMessage();
-      }
-
+    catch (PDOException $e){
+      echo "ajout invalide".$e->getMessage();
     }
 
+  }
 }

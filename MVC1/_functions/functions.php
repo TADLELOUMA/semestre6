@@ -18,12 +18,6 @@ function debug($var){
 // Vérifie si l'utilisateur est connecté
 function utilisateur_est_connecte() {
 
-	return !empty($_SESSION['id']);
+	return !empty($_SESSION['idUsers']);
 }
 
-// Vérifie si l'utilisateur est connecté   
-function utilisateur_est_connecte() {
- 
-	return !empty($_SESSION['id']);
-
-}

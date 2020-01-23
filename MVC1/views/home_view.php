@@ -3,7 +3,8 @@
 <html>
     <head>
         <title>StopGaspillage</title>
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="../assets/styles/css/style.css">
+        <link rel="stylesheet" href="../assets/styles/css/bootstrap.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="jj.js"></script>

@@ -21,31 +21,16 @@ $inscription = new Inscription_model($username,$adresse_email,$mot_de_pass,$pass
 
 $id_utilisateur= $inscription->ajouter_membre_dans_bdd();
   
-  // Si la base de données a bien voulu ajouter l'utliisateur (pas de doublons)
+  // Si la base de données a bien voulu ajouter l'utlilisateur (pas de doublons)
 if(ctype_digit($id_utilisateur)) {
 
-  
-  // Preparation du mail
-	/*$message_mail = '<html><head></head><body>
-	  <p>Merci de vous être inscrit sur "mon site" !</p>
-	  <p>Veuillez cliquer sur <a href="#>ce lien</a> pour activer votre compte !</p>
-    </body></html>';
-    
-  $headers_mail  = 'MIME-Version: 1.0'                           ."\r\n";
-	$headers_mail .= 'Content-type: text/html; charset=utf-8'      ."\r\n";
-	$headers_mail .= 'From: "Mon site" <contact@monsite.com>'      ."\r\n";
-	
-  // Envoi du mail
-	mail($mot_de_pass, 'Inscription sur <monsite.com>', $message_mail, $headers_mail);
-  */
-  
-  
-  // Affichage de la confirmation de l'inscription
-
- // include_once('../views/validerCompteAvecCode_view.php');
-  
   //// On enregistre les informations dans la session
   $inscription->session($id_utilisateur);
+
+  $code =$_SESSION['code'];
+  // Affichage de la confirmation de l'inscription
+  include_once('../views/validerCompteAvecCode_view.php?code ='.$code);
+  
   
 // Gestion des doublons
 } else{

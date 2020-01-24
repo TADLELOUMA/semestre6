@@ -4,19 +4,19 @@ require_once('../models/Inscription_model.php');
 
 function valider_compte_avec_code($code) {
 
-    global $pdo ;
+  global $pdo ;
+
+  $requete = $pdo->prepare('UPDATE Users SET
+    code = "1"
+    WHERE
+    code = :code');
+
+  $requete->bindValue(':code', $code);
   
-    $requete = $pdo->prepare('UPDATE Users SET
-      code = "1"
-      WHERE
-      code = "0"');
-  
-    $requete->bindValue(':code', $code);
-    
-    $requete->execute();
-  
-    return ($requete->rowCount() == 1);
-  }
+  $requete->execute();
+
+  return ($requete->rowCount() == 1);
+}
 
 
 

@@ -15,6 +15,7 @@ class Connexion_model
 
 	public function combinaison_connexion_valide($username, $mot_de_pass) {
 		global $pdo;
+		
 		$requete = $pdo->prepare("SELECT * FROM Users 
 			WHERE
 			username  = :username" );
@@ -62,9 +63,9 @@ class Connexion_model
 			'username' => $this->username));
 		  $result = $requete->fetch();
 		  $_SESSION['username'] = $this->username;
-		  $_SESSION['idUsers']     = $requete['idUsers'];
-		  $_SESSION['code'] = $requete['code'];;
-		  $_SESSION['adresse_mail']  = $requete['adresse_mail'];;
+		  $_SESSION['idUsers']     = $result['idUsers'];
+		  $_SESSION['code'] = $result['code'];;
+		  $_SESSION['adresse_mail']  = $result['adresse_mail'];;
 		  return true;
 		}catch(PDOException $e)
 		{

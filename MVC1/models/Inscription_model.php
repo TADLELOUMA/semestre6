@@ -20,28 +20,28 @@ class Inscription_model
         $this->Pass_word = $password;
         $this->passwrd_confirmed = $passwrd_confirmed;
         $this->passhass = password_hash($this->Pass_word, PASSWORD_DEFAULT);
-
+        $this->code = uniqid(rand());
     }
  
   public function ajouter_membre_dans_bdd()
   {
     global $pdo;
 
+
+
     try
     {
-      $requete = $pdo->prepare('INSERT INTO Users(username,adresse_mail,mot_de_pass) VALUES (:username,:adresse_email,:passhass)');
+      $requete = $pdo->prepare('INSERT INTO Users(username,adresse_mail,mot_de_pass,code) VALUES (:username,:adresse_email,:passhass,:code)');
       $result =$requete->execute(array(
         'username' => $this->username,
         'adresse_email' => $this->adresse_email,
-        'passhass' => $this->passhass
+        'passhass' => $this->passhass,
+        'code'=> $this->code
       ));
       if($result){
         return $pdo->lastInsertId();
       }
       return $requete->errorInfo();
-      //echo "ajout reussi"."<br />";
-
-      /*echo getId;*/
     }
     catch (PDOException $e){
       echo "ajout invalide".$e->getMessage($username);
@@ -67,5 +67,23 @@ class Inscription_model
     }
 
   }
+
+  public function valider_compte_avec_code($code) {
+
+    global $pdo ;
+  
+    $requete = $pdo->prepare('UPDATE Users SET
+      code = "1"
+      WHERE
+      code = "0"');
+  
+    $requete->bindValue(':code', $code);
+    
+    $requete->execute();
+  
+    return ($requete->rowCount() == 1);
+  }
+
+
   
 }

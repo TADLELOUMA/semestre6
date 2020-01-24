@@ -1,62 +1,33 @@
-
-<! DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
-      <title> dons</title>
+    <title> Nous contacter</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../MVC1/assets/styles/css/donnerr.css">
+        <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     </head>
     <body>
-
-      <!--?php include_once '../views/includes/header.php'?> -->
-
-        <h1><p>QUI DONNE RECOIT</h1></p>
-        <p> le fait de donner aux personnes qui sont dans le besoin est un geste très honorable</p>
-         <p>le fait de donner aux personnes qui sont dans le besoin est un geste très honorable</p>
-         <p>le fait de donner aux personnes qui sont dans le besoin est un geste très honorable</p>
-         <p>le fait de donner aux personnes qui sont dans le besoin est un geste très honorable</p>
-         <p>le fait de donner aux personnes qui sont dans le besoin est un geste très honorable</p>
-         <p>le fait de donner aux personnes qui sont dans le besoin est un geste très honorable</p>
-         <p>le fait de donner aux personnes qui sont dans le besoin est un geste très honorable</p>
-         <p>le fait de donner aux personnes qui sont dans le besoin est un geste très honorable</p>
-    <form>
-
-      <div class="dropdown">
-
-        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <div class="contact">
+            <div class="inner-width">
+                <h1> Que voulez vous donner ?</h1>
+                    <p> Le fait de donner aux personne dans le besoin est un geste très honorable</p>
+                        <form method ="post" action="">
+                            <select name="Categories" class="cate">
+                                <option value="" >choisir</option>
+                                <option value="plat" >Plat</option>
+                                <option value="dessert" >DESSERT</option>
+                                <option value="plat" >Legumes</option>
+                                <option value="plat" >Fruit</option>
+                            </select>
+                            <input type="text" class="nom" placeholder="Nom du produit">
+                            <input type="number" class="poids" placeholder="poids du produit">
+                            <input type="date" class="date" placeholder="Date d'expiration">
+                            <input type="tel" class="numero" placeholder="Numero de telephone">
+                        </form>
+                <div class="clear"></div>
+                    <button> Envoyer</button>
+            </div>
         </div>
-      </div>
-
-      <div class="form-group">
-        <div>
-            <label for="formGroupExampleInput2">categorie du produit</label>
-          <form method ="post" action"">
-              <select name="Categories">
-                <option value="" >choisir</option>
-                <option value="plat" >Plat</option>
-                <option value="dessert" >DESSERT</option>
-                <option value="plat" >Plat</option>
-              </select>
-          <form>
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="formGroupExampleInput2">nom du produit</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
-      </div>
-      <div class="form-group">
-        <label for="formGroupExampleInput2">poids</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
-      </div>
-      <div class="form-group">
-        <label for="formGroupExampleInput2">date d'expiration</label>
-        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
-      </div>
-    </form>
-
-    <!-----fin services---->
-    <!-----footer---->
-    <?php include_once '../views/includes/footer.php'?>
-    <!----- fin footer---->
-
-
     </body>
-  </html>
+</html>

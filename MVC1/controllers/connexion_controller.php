@@ -26,8 +26,7 @@ if(utilisateur_est_connecte()){
   
   		$connexion = new Connexion_model($username,$mot_de_pass);
   		$id_utilisateur= $connexion->combinaison_connexion_valide(str_secur($username), str_secur($mot_de_pass));
-  		echo $id_utilisateur;
- 
+  	
   		// Si les identifiants sont valides
 		if (false !== $id_utilisateur) 
 		{

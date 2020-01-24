@@ -24,8 +24,9 @@ $id_utilisateur= $inscription->ajouter_membre_dans_bdd();
   // Si la base de données a bien voulu ajouter l'utliisateur (pas de doublons)
 if(ctype_digit($id_utilisateur)) {
 
+  
   // Preparation du mail
-	$message_mail = '<html><head></head><body>
+	/*$message_mail = '<html><head></head><body>
 	  <p>Merci de vous être inscrit sur "mon site" !</p>
 	  <p>Veuillez cliquer sur <a href="#>ce lien</a> pour activer votre compte !</p>
     </body></html>';
@@ -36,10 +37,15 @@ if(ctype_digit($id_utilisateur)) {
 	
   // Envoi du mail
 	mail($mot_de_pass, 'Inscription sur <monsite.com>', $message_mail, $headers_mail);
-
+  */
+  
   
   // Affichage de la confirmation de l'inscription
-  echo "inscription ok";
+
+ // include_once('../views/validerCompteAvecCode_view.php');
+  
+  //// On enregistre les informations dans la session
+  $inscription->session($id_utilisateur);
   
 // Gestion des doublons
 } else{

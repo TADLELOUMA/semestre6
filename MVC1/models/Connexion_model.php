@@ -23,10 +23,15 @@ class Connexion_model
 			$result = $requete->fetch();
 		
 		if ($result) {
+			if(password_verify($mot_de_pass,$result['mot_de_pass']))
 	
-			return $result['idUsers'];
-		}else
+				return $result['idUsers'];
+			else{
+				return false;
+			}
+		}else{
 			return false;
+		}
 	}
 	public function lire_infos_utilisateur($idUsers) {
 
@@ -46,5 +51,27 @@ class Connexion_model
   		}
   		return false;
 	}
+
+	public function session($username){
+
+		global $pdo;
+		try{
+	
+		  $requete = $pdo->prepare("SELECT * FROM Users WHERE username = :username");
+		  $requete->execute(array(
+			'username' => $this->username));
+		  $result = $requete->fetch();
+		  $_SESSION['username'] = $this->username;
+		  $_SESSION['idUsers']     = $requete['idUsers'];
+		  $_SESSION['code'] = $requete['code'];;
+		  $_SESSION['adresse_mail']  = $requete['adresse_mail'];;
+		  return true;
+		}catch(PDOException $e)
+		{
+		  echo "enregistrement de la session du".$e->getMessage($username);
+		}
+		return false;
+	
+	  }
 
 }

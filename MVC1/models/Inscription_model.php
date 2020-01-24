@@ -10,6 +10,7 @@ class Inscription_model
     private $Pass_word;
     private $passwrd_confirmed;
     private $passhass;
+    private $code;
 
     function __construct($username,$adresse_email,$password,$passwrd_confirmed){
         global $pdo;
@@ -43,8 +44,28 @@ class Inscription_model
       /*echo getId;*/
     }
     catch (PDOException $e){
-      echo "ajout invalide".$e->getMessage();
+      echo "ajout invalide".$e->getMessage($username);
     }
 
   }
+  public function session($idUsers){
+
+    global $pdo;
+    try{
+
+      $requete = $pdo->prepare("SELECT * FROM Users WHERE username = :username");
+      $requete->execute(array(
+        'username' => $this->username));
+      $result = $requete->fetch();
+      $_SESSION['idUsers'] = $idUsers;
+      $_SESSION['username'] = $this->username;
+      $_SESSION['adresse_mail']  = $result['adresse_mail'];
+      $_SESSION['code'] = $result['code'];
+    }catch(PDOException $e)
+    {
+      echo "enregistrement de la session du".$e->getMessage($username);
+    }
+
+  }
+  
 }

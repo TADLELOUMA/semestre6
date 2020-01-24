@@ -27,19 +27,19 @@
               </ol>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img class="d-block img-fluid" src="images/banner.jpg" alt="banner">
+                  <img class="d-block img-fluid" src="../MVC1/assets/images/banner.jpg" alt="banner">
                     <div class="carousel-caption">
                       <h5>Plus vous donnez Plus vous recevrez</h5>
                     </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block img-fluid" src="images/banner1.jpg" alt="banner">
+                  <img class="d-block img-fluid" src="../MVC1/assets/images/banner1.jpg" alt="banner">
                     <div class="carousel-caption">
                       <h5>Un coeur qui donne Est un coeur doux</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img class="d-block img-fluid" src="images/banner2.jpg" alt="banner">
+                  <img class="d-block img-fluid" src="../MVC1/assets/images/banner2.jpg" alt="banner">
                     <div class="carousel-caption">
                       <h5>La main qui donne est celle qui recevra</h5>
                     </div>
